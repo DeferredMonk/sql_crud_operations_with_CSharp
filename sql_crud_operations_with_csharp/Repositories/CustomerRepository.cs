@@ -8,9 +8,21 @@ namespace sql_crud_operations_with_csharp.Repositories
     public class CustomerRepository : ICustomerRepository
     {
         public string ConnectionString { get; set; } = string.Empty;
+
+        // Add new customer to database
         public void Add(Customer entity)
         {
-            throw new NotImplementedException();
+            using var connection = new SqlConnection(ConnectionString);
+            connection.Open();
+            var sql = "INSERT INTO Customer (FirstName, LastName, Country, PostalCode, Phone, Email) VALUES (@FirstName, @LastName, @Country, @PostalCode, @Phone, @Email)";
+            using var command = new SqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@FirstName", entity.FirstName);
+            command.Parameters.AddWithValue("@LastName", entity.LastName);
+            command.Parameters.AddWithValue("@Country", entity.Country);
+            command.Parameters.AddWithValue("@PostalCode", entity.PostalCode);
+            command.Parameters.AddWithValue("@Phone", entity.Phone);
+            command.Parameters.AddWithValue("@Email", entity.Email);
+            command.ExecuteNonQuery();
         }
 
         public IEnumerable<Customer> GetAll()
