@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+
 static string GetConnectionString()
 {
     var builder = new SqlConnectionStringBuilder
