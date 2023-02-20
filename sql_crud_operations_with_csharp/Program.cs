@@ -17,3 +17,4 @@ static string GetConnectionString()
     return builder.ConnectionString;
 }
 
+var customerRepository = new CustomerRepository { ConnectionString = GetConnectionString() };
