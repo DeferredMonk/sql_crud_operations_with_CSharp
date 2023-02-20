@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sql_crud_operations_with_csharp", "sql_crud_operations_with_csharp\sql_crud_operations_with_csharp.csproj", "{C2470D8F-2261-4678-BB1E-35882BF3006E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2470D8F-2261-4678-BB1E-35882BF3006E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2470D8F-2261-4678-BB1E-35882BF3006E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2470D8F-2261-4678-BB1E-35882BF3006E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2470D8F-2261-4678-BB1E-35882BF3006E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DEAD594D-A1B7-4F7B-A96F-F4AD328B0542}
+	EndGlobalSection
+EndGlobal
