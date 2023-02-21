@@ -1,6 +1,7 @@
-
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
+using sql_crud_operations_with_csharp.Models;
 using sql_crud_operations_with_csharp.Repositories;
+
 static string GetConnectionString()
 {
     var builder = new SqlConnectionStringBuilder
