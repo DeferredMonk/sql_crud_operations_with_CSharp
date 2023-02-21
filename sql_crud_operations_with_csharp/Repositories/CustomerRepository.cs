@@ -1,7 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
 using sql_crud_operations_with_csharp.Models;
-using System.Diagnostics.Metrics;
-using System.Numerics;
 
 namespace sql_crud_operations_with_csharp.Repositories
 {
@@ -34,7 +32,7 @@ namespace sql_crud_operations_with_csharp.Repositories
             using SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
-            { 
+            {
                 yield return ParsedAnswer(reader);
             }
 
@@ -84,7 +82,25 @@ namespace sql_crud_operations_with_csharp.Repositories
 
         public void Update(Customer entity)
         {
-            throw new NotImplementedException();
+            using var connection = new SqlConnection(ConnectionString);
+            connection.Open();
+            var sql = "UPDATE Customer SET " +
+                "FirstName = @FirstName, " +
+                "LastName = @LastName, " +
+                "Country = @Country, " +
+                "PostalCode = @PostalCode, " +
+                "Phone = @Phone, " +
+                "Email = @Email " +
+                "WHERE CustomerId = @CustomerId";
+            using var command = new SqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@FirstName", entity.FirstName);
+            command.Parameters.AddWithValue("@LastName", entity.LastName);
+            command.Parameters.AddWithValue("@Country", entity.Country);
+            command.Parameters.AddWithValue("@PostalCode", entity.PostalCode);
+            command.Parameters.AddWithValue("@Phone", entity.Phone);
+            command.Parameters.AddWithValue("@Email", entity.Email);
+            command.Parameters.AddWithValue("@CustomerId", entity.CustomerId);
+            command.ExecuteNonQuery();
         }
 
         private Customer ParsedAnswer(SqlDataReader reader)
@@ -100,14 +116,14 @@ namespace sql_crud_operations_with_csharp.Repositories
                 { "Email", null }
             };
             var customer = new Customer();
-            foreach(var column in columns.Select((entry, index) => new { entry, index }))
+            foreach (var column in columns.Select((entry, index) => new { entry, index }))
             {
                 if (!reader.IsDBNull(column.index + 1))
                 {
                     columns[column.entry.Key] = reader.GetString(column.index + 1);
                 }
                 //column.index, column.entry.Key, column.entry.Value
-                    
+
             }
             customer = new Customer(
                 reader.GetInt32(0),
