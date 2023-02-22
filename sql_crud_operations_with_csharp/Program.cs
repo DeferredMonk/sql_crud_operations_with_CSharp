@@ -16,3 +16,11 @@ static string GetConnectionString()
 }
 
 var customerRepository = new CustomerRepository { ConnectionString = GetConnectionString() };
+var customerCountry = new CustomerCountryRepository { ConnectionString = GetConnectionString() };
+var customerSpender = new CustormerSpenderRepository { ConnectionString = GetConnectionString() };
+
+var c = customerSpender.customersBySpenderCount();
+foreach (var x in c)
+{
+    Console.WriteLine(x.ToString());
+}
