@@ -35,9 +35,7 @@ namespace sql_crud_operations_with_csharp.Repositories
             {
                 yield return ParsedAnswer(reader);
             }
-
         }
-
 
         // Get customer details from database by Id
         public Customer GetById(int customerId)
@@ -78,6 +76,26 @@ namespace sql_crud_operations_with_csharp.Repositories
                 result = ParsedAnswer(reader);
             }
             return result;
+        }
+
+        public IEnumerable<Customer> GetLimitedCustomers(int limit, int offset)
+        {
+            using var connection = new SqlConnection(ConnectionString);
+            connection.Open();
+            var sql = "SELECT CustomerId, FirstName, LastName, Country, PostalCode, Phone, Email " +
+                "FROM Customer " +
+                "ORDER BY CustomerId " +
+                "OFFSET @Offset ROWS " +
+                "FETCH NEXT @Limit ROWS ONLY";
+            using var command = new SqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@Offset", offset);
+            command.Parameters.AddWithValue("@Limit", limit);
+            using SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                yield return ParsedAnswer(reader);
+            }
         }
 
         public void Update(Customer entity)
