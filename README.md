@@ -18,12 +18,12 @@ Client library. Database used in assignment is Chinook. The C# application is cr
 
 
 ## SuperheroDB Diagram
-
+![SuperheroDB diagram] (https://github.com/DeferredMonk/sql_crud_operations_with_csharp/blob/master/SuperheroSQLQueries/SuperheroDiagram.PNG)
 
 
 ## Authors
 [@Heidi J](https://github.com/HeidiJoensuu)
-[@Marko A](https://github.com/DeferredMonk)
+[@Marco A](https://github.com/DeferredMonk)
 [@Kirsi T](https://github.com/KipaTa)
 
 ## Sources
