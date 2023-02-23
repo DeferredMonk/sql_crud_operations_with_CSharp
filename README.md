@@ -15,10 +15,55 @@ Client library. Database used in assignment is Chinook. The C# application is cr
 * Microsoft SQL Server Management Studio
 
 ## sql_crud_operations_with_csharp Folder Structure
-
+```
+.
+│   .gitattributes
+│   .gitignore
+│   README.md
+│   sql_crud_operations_with_csharp.sln
+│   
+├───sql_crud_operations_with_csharp
+│   │   Program.cs
+│   │   sql_crud_operations_with_csharp.csproj
+│   │   
+│   ├───bin
+│   ├───Models                                          #Includes database tables as structures
+│   │       Customer.cs
+│   │       CustomerCountry.cs
+│   │       CustomerGenre.cs
+│   │       CustomerSpender.cs
+│   │       
+│   ├───obj
+│   └───Repositories
+│       ├───Classes
+│       │       CustomerCountryRepository.cs            #Query for customer by country structure
+│       │       CustomerGenreRepository.cs              #Query for customers top genre/s 
+│       │       CustomerRepository.cs                   #Queries for CRUD operatations
+│       │       CustormerSpenderRepository.cs           #Query for maximum spender customers
+│       │       
+│       └───Interfaces                                  #Includes interfaces
+│               ICrudRepository.cs  
+│               ICustomerCountryRepository.cs
+│               ICustomerGenreRepository.cs
+│               ICustomerRepository.cs
+│               ICustomerSpenderRepository.cs
+│               
+└───SuperheroSQLQueries                                 #Includes SQL queries
+        01_dbCreate.Sql
+        02_tableCreate.sql
+        03_relationshipSuperheroAssistant.sql
+        04_relationshipSuperheroPower.sql
+        05_insertSuperheroes.sql
+        06_insertAssistants.sql
+        07_powers.sql
+        08_updateSuperhero.sql
+        09_deleteAssistant.sql
+        SuperheroDiagram.PNG                           #SuperheroDb Diagramn in this readme
+        
+```
 
 ## SuperheroDB Diagram
-![SuperheroDB diagram](https://raw.github.com/DeferredMonk/sql_crud_operations_with_csharp/blob/master/SuperheroSQLQueries/SuperheroDiagram.PNG)
+![SuperheroDB diagram](/SuperheroSQLQueries/SuperheroDiagram.PNG)
 
 
 ## Authors
