@@ -8,7 +8,6 @@ namespace sql_crud_operations_with_csharp.Repositories.Classes
     {
         public string ConnectionString { get; set; } = string.Empty;
 
-        // Add new customer to database
         public void Add(Customer entity)
         {
             using var connection = new SqlConnection(ConnectionString);
@@ -38,7 +37,6 @@ namespace sql_crud_operations_with_csharp.Repositories.Classes
             }
         }
 
-        // Get customer details from database by Id
         public Customer GetById(int customerId)
         {
             using var connection = new SqlConnection(ConnectionString);
