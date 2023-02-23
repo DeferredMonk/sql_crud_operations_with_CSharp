@@ -122,7 +122,7 @@ namespace sql_crud_operations_with_csharp.Repositories
         }
 
         private Customer ParsedAnswer(SqlDataReader reader)
-        {//string FirstName, string LastName, string Country, string PostalCode, string Phone, string Email
+        {
 
             Dictionary<string, string> columns = new Dictionary<string, string>()
             {
@@ -140,9 +140,8 @@ namespace sql_crud_operations_with_csharp.Repositories
                 {
                     columns[column.entry.Key] = reader.GetString(column.index + 1);
                 }
-                //column.index, column.entry.Key, column.entry.Value
-
             }
+
             customer = new Customer(
                 reader.GetInt32(0),
                 columns["FirstName"],
