@@ -18,7 +18,7 @@ Client library. Database used in assignment is Chinook. The C# application is cr
 
 
 ## SuperheroDB Diagram
-![SuperheroDb Diagram] (C:\Users\KTaini\Desktop\SQL\SuperheroSQLQueries)
+
 
 
 ## Authors
