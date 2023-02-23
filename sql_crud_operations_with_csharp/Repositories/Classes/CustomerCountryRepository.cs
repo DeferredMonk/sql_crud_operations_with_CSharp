@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using sql_crud_operations_with_csharp.Models;
+using sql_crud_operations_with_csharp.Repositories.Interfaces;
 
-namespace sql_crud_operations_with_csharp.Repositories
+namespace sql_crud_operations_with_csharp.Repositories.Classes
 {
-    public class CustomerCountryRepository: ICustomerCountryRepository
+    /// <summary>
+    /// CustomerCountryRepository class. Implements <see cref="ICustomerCountryRepository"/>.
+    /// </summary>
+    public class CustomerCountryRepository : ICustomerCountryRepository
     {
         public string ConnectionString { get; set; } = string.Empty;
 
@@ -31,7 +30,7 @@ namespace sql_crud_operations_with_csharp.Repositories
                     reader.GetString(0),
                     reader.GetInt32(1)
                 );
-                
+
             }
         }
     }
