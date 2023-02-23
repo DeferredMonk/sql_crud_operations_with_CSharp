@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using sql_crud_operations_with_csharp.Models;
+using sql_crud_operations_with_csharp.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace sql_crud_operations_with_csharp.Repositories
+namespace sql_crud_operations_with_csharp.Repositories.Classes
 {
     public class CustormerSpenderRepository : ICustomerSpenderRepository
     {
@@ -27,7 +28,7 @@ namespace sql_crud_operations_with_csharp.Repositories
             using var command = new SqlCommand(sql, connection);
             using SqlDataReader reader = command.ExecuteReader();
 
-            
+
             while (reader.Read())
             {
                 yield return new CustomerSpender
