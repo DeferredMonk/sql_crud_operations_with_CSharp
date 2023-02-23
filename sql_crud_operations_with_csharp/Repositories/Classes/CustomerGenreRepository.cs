@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace sql_crud_operations_with_csharp.Repositories.Classes
 {
+    /// <summary>
+    /// CustomerGenreRepository class. Implements <see cref="ICustomerGenreRepository"/>.
+    /// </summary>
     public class CustomerGenreRepository : ICustomerGenreRepository
     {
         public string ConnectionString { get; set; } = string.Empty;

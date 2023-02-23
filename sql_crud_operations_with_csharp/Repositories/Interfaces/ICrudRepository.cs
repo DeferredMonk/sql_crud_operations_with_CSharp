@@ -13,6 +13,7 @@
         /// </summary>
         /// <returns>Yields row of data</returns>
         IEnumerable<T> GetAll();
+
         /// <summary>
         /// GetById gets one row 
         /// for the specified id
@@ -20,11 +21,13 @@
         /// <param name="id">Id of table</param>
         /// <returns>One row of data</returns>
         T GetById(Id id);
+
         /// <summary>
         /// Adds entity to Database
         /// </summary>
         /// <param name="entity">Template of table object</param>
         void Add(T entity);
+
         /// <summary>
         /// Updates entity to database
         /// </summary>

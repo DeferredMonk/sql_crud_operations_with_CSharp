@@ -4,6 +4,9 @@ using sql_crud_operations_with_csharp.Repositories.Interfaces;
 
 namespace sql_crud_operations_with_csharp.Repositories.Classes
 {
+    /// <summary>
+    /// CustomerCountryRepository class. Implements <see cref="ICustomerCountryRepository"/>.
+    /// </summary>
     public class CustomerCountryRepository : ICustomerCountryRepository
     {
         public string ConnectionString { get; set; } = string.Empty;
