@@ -3,6 +3,9 @@ using sql_crud_operations_with_csharp.Models;
 
 namespace sql_crud_operations_with_csharp.Repositories
 {
+    /// <summary>
+    /// CustomerRepository class. Implements <see cref="ICustomerRepository"/>.
+    /// </summary>
     public class CustomerRepository : ICustomerRepository
     {
         public string ConnectionString { get; set; } = string.Empty;
@@ -23,6 +26,7 @@ namespace sql_crud_operations_with_csharp.Repositories
             command.ExecuteNonQuery();
         }
 
+        
         public IEnumerable<Customer> GetAll()
         {
             using var connection = new SqlConnection(ConnectionString);
@@ -121,6 +125,11 @@ namespace sql_crud_operations_with_csharp.Repositories
             command.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Creates new customers from the data from database answer.
+        /// </summary>
+        /// <param name="reader"> SqlDataReader  </param>
+        /// <returns><see cref="Customer"/>New customer</returns>
         private Customer ParsedAnswer(SqlDataReader reader)
         {
 
@@ -134,6 +143,8 @@ namespace sql_crud_operations_with_csharp.Repositories
                 { "Email", null }
             };
             var customer = new Customer();
+
+            //Going through data from single the customer.
             foreach (var column in columns.Select((entry, index) => new { entry, index }))
             {
                 if (!reader.IsDBNull(column.index + 1))
