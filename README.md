@@ -7,24 +7,24 @@ Client library. Database used in assignment is Chinook. The C# application is cr
 
 2. The second part (SuperheroSQLQueries) deals with creating a SuperheroDb database. Sqripts written in SQL contains creation of tables, relationships and inserts, updates and deletes of data.  
 
-# Technologies used
+## Technologies used
 
 * C#
 * SQL Client
 * Microsoft SQL Server 19.0.1
 * Microsoft SQL Server Management Studio
 
-# sql_crud_operations_with_csharp Folder Structure
+## sql_crud_operations_with_csharp Folder Structure
 
 
-# SuperheroDB Diagram
+## SuperheroDB Diagram
+![SuperheroDb Diagram] (C:\Users\KTaini\Desktop\SQL\SuperheroSQLQueries)
 
 
-
-# Authors
+## Authors
 [@Heidi J](https://github.com/HeidiJoensuu)
 [@Marko A](https://github.com/DeferredMonk)
 [@Kirsi T](https://github.com/KipaTa)
 
-# Sources
+## Sources
 Project was an assignment done during education program created by Noroff Education
